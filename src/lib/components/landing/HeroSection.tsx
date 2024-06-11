@@ -1,10 +1,10 @@
 export default function HeroSection() {
   return (
-    <div className="section-hero bg-[url('/landing.png')] bg- lg:bg-cover bg-no-repeat">
+    <div className="section-hero bg-[url('/landing.png')] bg-cover bg-no-repeat">
       <div className="section-hero flex justify-end">
         <div className="main-container">
           <div className="h-full flex">
-            <div className="w-full flex items-end px-4 pb-10">
+            <div className="w-full flex items-end px-4 pb-6 md:pb-28">
               <div>
                 <h1>Revolutionary Discovery in Medicine</h1>
                 <p className="sub-title">
@@ -13,9 +13,9 @@ export default function HeroSection() {
                 </p>
               </div>
             </div>
-            <div className="sidebar-news w-full hidden lg:block">
+            <div className="sidebar-news hidden lg:block">
               <div className="h-full flex items-end pb-10 border-l-[1px] border-[#CCCCCC]">
-                <div className="flex flex-col justify-end">
+                <div className="w-full flex flex-col justify-end">
                   <div>
                     <h3 className="px-6 text-white">Related News</h3>
                     <div className="pr-16">
@@ -28,7 +28,9 @@ export default function HeroSection() {
                           promising treatment option.
                         </p>
                       </div>
-                      <div className="h-[1px] bg-[#CCCCCC]"></div>
+                    </div>
+                    <div className="h-[1px] bg-border-gray"></div>
+                    <div className="pr-16">
                       <div className="p-6 pb-0 max-w-[350px]">
                         <p className="text-[20px] font-bold text-white">
                           Exclusive Interview with Experts

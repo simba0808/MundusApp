@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 export default function CustomSection() {
   const recent_news = [
@@ -86,7 +87,10 @@ export default function CustomSection() {
     <section className="flex justify-end mb-10">
       <div className="main-container px-4">
         <div className="mt-8">
-          <h3 className="py-6">RECENT NEWS</h3>
+          <div className="flex items-center gap-2 py-6">
+            <div className="w-4 h-6 bg-[#273A8C] rounded-r-full"></div>
+            <h3>RECENT NEWS</h3>
+          </div>
           <div className="md:max-w-[90%] mx-auto flex flex-col gap-4">
             {recent_news.map((item, index) => {
               return (

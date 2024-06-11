@@ -1,7 +1,14 @@
+"use client";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Pagination } from "swiper/modules";
 import { twMerge } from "tailwind-merge";
 
 import NewsCard from "@/lib/components/cards/NewsCard";
 import TopReadCard from "@/lib/components/cards/TopReadCard";
+
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 export const topics = [
   "Breaking News",
@@ -16,6 +23,24 @@ export const topics = [
   "Travel and Leisure",
   "Education",
   "Food",
+];
+
+export const top_reads = [
+  {
+    content:
+      "Research Unveils Consumer Trends Shaping the Future: Discover the Most Impactful Changes",
+  },
+  {
+    content:
+      "Exclusive Interview: Innovative Entrepreneur Shares Secrets of Success in the Business World",
+  },
+  {
+    content:
+      "Explore Emerging Technologies That Are Revolutionizing the Industry and Changing Our Daily Lives",
+  },
+  {
+    content: "How AI is Redefining Everyday Tasks and Enhancing Efficiency",
+  },
 ];
 
 export const Tag = ({
@@ -68,57 +93,98 @@ export default function RelevantSection() {
     },
   ];
 
-  const top_reads = [
-    {
-      content:
-        "Research Unveils Consumer Trends Shaping the Future: Discover the Most Impactful Changes",
-    },
-    {
-      content:
-        "Exclusive Interview: Innovative Entrepreneur Shares Secrets of Success in the Business World",
-    },
-    {
-      content:
-        "Explore Emerging Technologies That Are Revolutionizing the Industry and Changing Our Daily Lives",
-    },
-    {
-      content: "How AI is Redefining Everyday Tasks and Enhancing Efficiency",
-    },
-  ];
-
   return (
     <section className="flex justify-end max-w-[100vw] overflow-hidden">
       <div className="main-container">
         <div className="flex">
           <div className="w-full mt-8 px-4">
-            <h3 className="py-6">RELEVANT NEWS</h3>
-            <div className="flex gap-x-4">
-              {card_contents.map((item, index) => {
-                return (
-                  <div key={index} className="min-w-[300px] max-w-[400px]">
-                    <NewsCard
+            <div className="flex items-center gap-2 py-6">
+              <div className="w-4 h-6 bg-[#273A8C] rounded-r-full"></div>
+              <h3>RELEVANT NEWS</h3>
+            </div>
+            <div className=" overflow-x-auto overflow-y-hidden">
+              <div className="flex gap-2">
+                {card_contents.map((item, index) => {
+                  return (
+                    <div
                       key={index}
-                      title={item.title}
-                      text={item.text}
-                      imgUrl={item.imgUrl}
-                    />
-                    <div className="px-4 mt-6 flex flex-col gap-4 max-w-[300px]">
-                      {news_contents
-                        .slice(index * 3, (index + 1) * 3)
-                        .map((item) => {
-                          return (
-                            <p
-                              key={item}
-                              className="news-title hover:cursor-pointer hover:text-gray-500"
-                            >
-                              {item}
-                            </p>
-                          );
-                        })}
+                      className="flex-1 min-w-[300px] md:min-w-[200px] max-w-[400px]"
+                    >
+                      <NewsCard
+                        title={item.title}
+                        text={item.text}
+                        imgUrl={item.imgUrl}
+                      />
+                      <div className="px-4 mt-6 flex flex-col gap-4 max-w-[350px]">
+                        {news_contents
+                          .slice(index * 3, (index + 1) * 3)
+                          .map((item) => {
+                            return (
+                              <p
+                                key={item}
+                                className="news-title hover:cursor-pointer hover:text-gray-500"
+                              >
+                                {item}
+                              </p>
+                            );
+                          })}
+                      </div>
                     </div>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
+              {/* <Swiper
+                slidesPerView="auto"
+                spaceBetween={10}
+                breakpoints={{
+                  "@0.00": {
+                    slidesPerView: 1,
+                    spaceBetween: 10,
+                  },
+                  "@0.75": {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                  },
+                  "@1.00": {
+                    slidesPerView: 3,
+                    spaceBetween: 40,
+                  },
+                  "@1.25": {
+                    slidesPerView: 4,
+                    spaceBetween: 60,
+                  },
+                }}
+                modules={[Autoplay, Pagination]}
+                className="mySwiper"
+              >
+                {card_contents.map((item, index) => {
+                  return (
+                    <SwiperSlide key={index}>
+                      <div className="min-w-[350px] max-w-[400px]">
+                        <NewsCard
+                          title={item.title}
+                          text={item.text}
+                          imgUrl={item.imgUrl}
+                        />
+                        <div className="px-4 mt-6 flex flex-col gap-4 max-w-[350px]">
+                          {news_contents
+                            .slice(index * 3, (index + 1) * 3)
+                            .map((item) => {
+                              return (
+                                <p
+                                  key={item}
+                                  className="news-title hover:cursor-pointer hover:text-gray-500"
+                                >
+                                  {item}
+                                </p>
+                              );
+                            })}
+                        </div>
+                      </div>
+                    </SwiperSlide>
+                  );
+                })}
+              </Swiper> */}
             </div>
             <div className="hidden lg:block mt-10">
               <h3 className="text-[32px] leading-[48px] mb-1">
@@ -136,7 +202,7 @@ export default function RelevantSection() {
             </div>
           </div>
           <div className="sidebar-news lg:block hidden">
-            <div className="pt-8 border-l-[1px] border-[#CCCCCC]">
+            <div className="pt-8 border-l-[1px] border-border-gray">
               <div className="flex items-center gap-2 py-6">
                 <div className="w-4 h-6 bg-[#273A8C] rounded-r-full"></div>
                 <h3 className="">MOST READ THIS WEEK</h3>

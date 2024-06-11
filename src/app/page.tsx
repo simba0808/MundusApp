@@ -5,9 +5,23 @@ import RelevantSection from "@/lib/components/landing/RelevantSection";
 import CustomSection from "@/lib/components/landing/CustomSection";
 
 export default function Home() {
+  const headerTrailing = (
+    <div className="hidden md:block max-w-[40%] w-full md:order-1">
+      <ul className="news-content flex justify-between font-semibold">
+        <li>Home</li>
+        <li>For you</li>
+        <li>Sports</li>
+        <li>Famous</li>
+        <li>Prizes</li>
+        <li>
+          <b>...</b>
+        </li>
+      </ul>
+    </div>
+  );
   return (
     <div className="">
-      <Header />
+      <Header hasSearch headerTrailing={headerTrailing} />
       <div>
         <HeroSection />
         <RelevantSection />
