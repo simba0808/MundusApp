@@ -24,8 +24,9 @@ export default function Footer() {
   return (
     <footer className="bg-[#273A8C]">
       <div className="main-container mx-auto px-4">
-        <div className="flex justify-between items-center py-6">
+        <div className="flex flex-col md:flex-row justify-between items-center py-6">
           {logoElement}
+          <div className="md:hidden w-full h-[2px] my-3 bg-white"></div>
           <p className="small-content">
             Mundus News | All Rights Reserved © Copyright 2024
           </p>

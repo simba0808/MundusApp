@@ -1,6 +1,41 @@
+import { twMerge } from "tailwind-merge";
+
 import NewsCard from "@/lib/components/cards/NewsCard";
 import TopReadCard from "@/lib/components/cards/TopReadCard";
-import NewsCarousel from "@/lib/components/carousels/NewsCarousel";
+
+export const topics = [
+  "Breaking News",
+  "Science and Technology",
+  "Business and Finance",
+  "Health and Wellness",
+  "Entertainment",
+  "Sports",
+  "Politics",
+  "Environment and Sustainability",
+  "Lifestyle and Fashion",
+  "Travel and Leisure",
+  "Education",
+  "Food",
+];
+
+export const Tag = ({
+  className,
+  topic,
+}: {
+  className?: string;
+  topic: string;
+}) => {
+  return (
+    <span
+      className={twMerge(
+        "px-4 py-2 text-[12px] font-medium border-[1px] border-black rounded-full",
+        className
+      )}
+    >
+      {topic}
+    </span>
+  );
+};
 
 export default function RelevantSection() {
   const news_contents = [
@@ -50,29 +85,6 @@ export default function RelevantSection() {
       content: "How AI is Redefining Everyday Tasks and Enhancing Efficiency",
     },
   ];
-
-  const topics = [
-    "Breaking News",
-    "Science and Technology",
-    "Business and Finance",
-    "Health and Wellness",
-    "Entertainment",
-    "Sports",
-    "Politics",
-    "Environment and Sustainability",
-    "Lifestyle and Fashion",
-    "Travel and Leisure",
-    "Education",
-    "Food",
-  ];
-
-  const Tag = ({ className, topic }: { className?: string; topic: string }) => {
-    return (
-      <span className="px-4 py-2 text-[12px] font-medium border-[1px] border-black rounded-full">
-        {topic}
-      </span>
-    );
-  };
 
   return (
     <section className="flex justify-end max-w-[100vw] overflow-hidden">

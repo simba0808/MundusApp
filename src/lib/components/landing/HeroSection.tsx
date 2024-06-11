@@ -1,12 +1,12 @@
 export default function HeroSection() {
   return (
-    <div className="section-hero bg-[url('/landing.png')] bg-cover bg-no-repeat">
+    <div className="section-hero bg-[url('/landing.png')] bg- lg:bg-cover bg-no-repeat">
       <div className="section-hero flex justify-end">
         <div className="main-container">
           <div className="h-full flex">
             <div className="w-full flex items-end px-4 pb-10">
               <div>
-                <h2>Revolutionary Discovery in Medicine</h2>
+                <h1>Revolutionary Discovery in Medicine</h1>
                 <p className="sub-title">
                   Researchers reveal significant breakthrough in the treatment
                   of chronic diseases
