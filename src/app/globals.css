@@ -18,12 +18,97 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+}
+
+h2 {
+  font-size: 48px;
+  font-weight: 700;
+  color: white;
+}
+
+h3 {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+@layer base {
+  .main-container {
+    width: 100%;
+    max-width: calc(1800px - 30px);
+  }
+  .sub-title {
+    font-size: 24px;
+    font-weight: 500;
+    color: white;
+  }
+  .news-title {
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 18.4px;
+  }
+  .news-content {
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 16.1px;
+  }
+  .small-content {
+    font-size: 12px;
+    font-weight: 600px;
+    color: white;
+    line-height: 18px;
+  }
+  .medium-content {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 23px;
+  }
+  .sidebar-news {
+    max-width: 450px;
+    width: 100%;
+  }
+  
+  @media (max-width: 1600px) {
+    .main-container {
+      max-width: calc(1536px - 30px);
+    }
+  }
+
+  @media (max-width: 1440px) {
+    .main-container {
+      max-width: calc(1440px - 160px);
+    }
+
+    .sidebar-news {
+      max-width: 400px;
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .medium-content {
+      font-size: 12px;
+      line-height: 14px;
+    }
+  }
+
+}
+
+@layer components {
+  .section-hero {
+    min-height: calc(100vh - 100px);
+  }
+
+  @media (max-width: 1024px) {
+    .section-hero {
+      min-height: 768px;
+    }
+  }
+
+  @media (max-width: 640px) {
+    .section-hero {
+      min-height: 450px;
+    }
+  }
 }
 
 @layer utilities {
