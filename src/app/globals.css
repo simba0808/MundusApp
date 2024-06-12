@@ -17,10 +17,6 @@
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-}
-
 .swiper-wrapper{
   justify-content: space-around !important;
   margin-right: 30px !important;
