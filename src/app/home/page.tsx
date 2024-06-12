@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 import Header from "@/lib/components/layout/Header";
 import Footer from "@/lib/components/layout/Footer";
 import HeroSection from "@/lib/components/landing/HeroSection";
@@ -8,7 +10,9 @@ export default function HomePage() {
   const headerTrailing = (
     <div className="hidden md:block max-w-[40%] w-full md:order-1">
       <ul className="news-content flex justify-between font-semibold">
-        <li>Home</li>
+        <li>
+          <Link href="/home">Home</Link>
+        </li>
         <li>For you</li>
         <li>Sports</li>
         <li>Famous</li>
