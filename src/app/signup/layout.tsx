@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 
 import Header from "@/lib/components/layout/Header";
 import Footer from "@/lib/components/layout/Footer";
@@ -11,7 +11,7 @@ export default function AuthLayout({
   return (
     <div>
       <Header />
-      {children}
+      <Suspense>{children}</Suspense>
       <Footer />
     </div>
   );
