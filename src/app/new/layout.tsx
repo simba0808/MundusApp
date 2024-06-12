@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 
 import Header from "@/lib/components/layout/Header";
@@ -10,9 +11,23 @@ export default function NewsLayout({
 }: {
   children: React.ReactNode;
 }) {
+  const headerTrailing = (
+    <div className="hidden md:block max-w-[40%] w-full md:order-1">
+      <ul className="news-content flex justify-between font-semibold">
+        <li>Home</li>
+        <li>For you</li>
+        <li>Sports</li>
+        <li>Famous</li>
+        <li>Prizes</li>
+        <li>
+          <b>...</b>
+        </li>
+      </ul>
+    </div>
+  );
   return (
     <div>
-      <Header />
+      <Header headerTrailing={headerTrailing} hasSearch />
       <div>
         <div className="section-hero bg-[url('/landing.png')] bg-cover bg-no-repeat">
           <div className="section-hero flex justify-end">
