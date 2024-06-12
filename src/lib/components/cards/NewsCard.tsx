@@ -14,27 +14,29 @@ export default function NewsCard({
   const router = useRouter();
 
   return (
-    <div className="border-[2px] border-[#CCCCCC] rounded-3xl hover:cursor-pointer">
-      <div className="p-4 pb-0">
-        <Image
-          className="w-full"
-          src={imgUrl}
-          width={100}
-          height={100}
-          alt="News"
-          unoptimized
-          priority
-        />
-      </div>
-      <div className="px-4 py-3">
-        <p className="news-title">{title}</p>
-        <p className="news-content mt-3">{text}</p>
-        <div className="flex justify-end mt-2">
-          <span
-            className="hover:text-gray-500"
-            onClick={() => router.push("/new")}
-          >{`READ MORE >`}</span>
+    <div className="flex flex-col justify-between border-[2px] border-border-gray rounded-3xl hover:cursor-pointer 2xl:min-h-[370px]">
+      <div>
+        <div className="p-4 pb-0">
+          <Image
+            className="w-full"
+            src={imgUrl}
+            width={100}
+            height={100}
+            alt="News"
+            unoptimized
+            priority
+          />
         </div>
+        <div className="px-4 py-3">
+          <p className="news-title">{title}</p>
+          <p className="news-content mt-3">{text}</p>
+        </div>
+      </div>
+      <div className="px-4 flex justify-end mb-2">
+        <span
+          className="hover:text-gray-500"
+          onClick={() => router.push("/new")}
+        >{`READ MORE >`}</span>
       </div>
     </div>
   );

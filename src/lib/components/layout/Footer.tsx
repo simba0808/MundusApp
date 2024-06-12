@@ -7,7 +7,7 @@ export default function Footer() {
   const router = useRouter();
 
   const onLogo = useCallback(() => {
-    router.push("/");
+    router.push("/home");
   }, [router]);
 
   const logoElement = useMemo(() => {

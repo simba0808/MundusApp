@@ -48,10 +48,10 @@ li:hover {
 
 @media (max-width: 640px) {
   h1 {
-    font-size: 18px;
+    font-size: 28px;
   }
   h2 {
-    font-size: 16px;
+    font-size: 24px;
   }
   h3 {
     font-size: 16px;
@@ -130,7 +130,21 @@ li:hover {
     min-height: calc(100vh - 100px);
   }
 
-  @media (max-width: 144OPX) {
+  .toggle-menu {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 360px;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 6px;
+  }
+
+  .toggle-menu li:hover {
+    color: #cccccc;
+  }
+
+  @media (max-width: 1440px) {
     .section-hero {
       min-height: 768px;
     }
@@ -145,6 +159,15 @@ li:hover {
   @media (max-width: 640px) {
     .section-hero {
       min-height: 250px;
+    }
+    .toggle-menu {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem;
+      background-color: white;
+      border-radius: 6px;
     }
   }
 }
