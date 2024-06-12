@@ -34,7 +34,7 @@ const InputField = ({
   );
 };
 
-export default function RegisterForm() {
+export default function SignupForm() {
   const searchParams = useSearchParams();
   const router = useRouter();
 
@@ -49,7 +49,7 @@ export default function RegisterForm() {
   const ProcceedButton = ({ step }: { step: number }) => {
     const onClick = () => {
       if (step < 4) {
-        router.push(`/register?step=${step + 1}`);
+        router.push(`/signup?step=${step + 1}`);
       } else {
         router.push("/home");
       }
@@ -88,7 +88,7 @@ export default function RegisterForm() {
                 className={curStep == 1 ? "hidden" : "block"}
                 width={18}
                 height={18}
-                onClick={() => router.push("/register?step=1")}
+                onClick={() => router.push("/signup?step=1")}
               />
             </div>
             <div className={curStep == 1 ? "block" : "hidden md:block"}>
@@ -124,7 +124,7 @@ export default function RegisterForm() {
                 className={curStep == 2 ? "hidden" : "block"}
                 width={18}
                 height={18}
-                onClick={() => router.push("/register?step=2")}
+                onClick={() => router.push("/signup?step=2")}
               />
             </div>
             <div className={curStep == 2 ? "block" : "hidden md:block"}>
@@ -168,7 +168,7 @@ export default function RegisterForm() {
                 className={curStep == 3 ? "hidden" : "block"}
                 width={18}
                 height={18}
-                onClick={() => router.push("/register?step=3")}
+                onClick={() => router.push("/signup?step=3")}
               />
             </div>
             <div className={curStep == 3 ? "block" : "hidden md:block"}>
@@ -217,7 +217,7 @@ export default function RegisterForm() {
                 className={curStep == 4 ? "hidden" : "block"}
                 width={18}
                 height={18}
-                onClick={() => router.push("/register?step=4")}
+                onClick={() => router.push("/signup?step=4")}
               />
             </div>
             <div className={`${curStep == 4 ? "block" : "hidden md:block"}`}>
