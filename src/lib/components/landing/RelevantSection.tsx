@@ -98,12 +98,12 @@ export default function RelevantSection() {
       <div className="main-container">
         <div className="flex">
           <div className="w-full mt-8 px-4">
-            <div className="flex items-center gap-2 py-6">
+            <div className="flex items-center gap-2 py-4">
               <div className="w-4 h-6 bg-[#273A8C] rounded-r-full"></div>
               <h3>RELEVANT NEWS</h3>
             </div>
             <div className=" overflow-x-auto overflow-y-hidden">
-              <div className="flex gap-2">
+              <div className="flex gap-2 py-3 ">
                 {card_contents.map((item, index) => {
                   return (
                     <div
@@ -111,6 +111,7 @@ export default function RelevantSection() {
                       className="flex-1 min-w-[300px] md:min-w-[200px] max-w-[400px]"
                     >
                       <NewsCard
+                        id={index + 1}
                         title={item.title}
                         text={item.text}
                         imgUrl={item.imgUrl}
@@ -203,7 +204,7 @@ export default function RelevantSection() {
           </div>
           <div className="sidebar-news lg:block hidden">
             <div className="pt-8 border-l-[1px] border-border-gray">
-              <div className="flex items-center gap-2 py-6">
+              <div className="flex items-center gap-2 py-4">
                 <div className="w-4 h-6 bg-[#273A8C] rounded-r-full"></div>
                 <h3 className="">MOST READ THIS WEEK</h3>
               </div>

@@ -1,13 +1,17 @@
 "use client";
-
 import { Tag } from "@/lib/components/landing/RelevantSection";
 import NewsData from "./data.json";
+import { notFound } from "next/navigation";
 
-export default function NewsPage() {
+export default function NewsPage({ params }: { params: { slug: string } }) {
+  const id = parseInt(params.slug);
+
+  if (id > 3) return notFound();
+
   return (
     <div className="my-8">
       <div className="flex flex-col gap-3">
-        {NewsData.overview.map((overview, index) => {
+        {NewsData[id - 1].overview.map((overview, index) => {
           return (
             <p key={overview} className="leading-[18px]">
               {overview}
@@ -16,9 +20,11 @@ export default function NewsPage() {
         })}
       </div>
       <div>
-        <h2 className="text-center my-4">{NewsData.main_contents.title}</h2>
+        <h2 className="text-center my-4">
+          {NewsData[id - 1].main_contents.title}
+        </h2>
         <div className="flex flex-col gap-3">
-          {NewsData.main_contents.contents.map((content) => {
+          {NewsData[id - 1].main_contents.contents.map((content) => {
             return (
               <p key={content} className="leading-[18px]">
                 {content}
@@ -27,7 +33,7 @@ export default function NewsPage() {
           })}
         </div>
         <div>
-          {NewsData.sub_contents.map((sub_content, index) => {
+          {NewsData[id - 1].sub_contents.map((sub_content, index) => {
             return (
               <div key={sub_content.title}>
                 <h3 className="my-4">{sub_content.title}</h3>

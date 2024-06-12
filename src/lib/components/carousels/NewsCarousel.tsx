@@ -31,6 +31,7 @@ const NewsCarousel: React.FC<CardProps> = ({ card_contents }) => {
           return (
             <SwiperSlide key={index}>
               <NewsCard
+                id={index + 1}
                 title={item.title}
                 text={item.text}
                 imgUrl={item.imgUrl}

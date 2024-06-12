@@ -3,10 +3,12 @@ import { useRouter } from "next/navigation";
 import Image from "next/image";
 
 export default function NewsCard({
+  id,
   title,
   text,
   imgUrl,
 }: {
+  id: number;
   title: string;
   text: string;
   imgUrl: string;
@@ -14,7 +16,7 @@ export default function NewsCard({
   const router = useRouter();
 
   return (
-    <div className="flex flex-col justify-between border-[2px] border-border-gray rounded-3xl hover:cursor-pointer 2xl:min-h-[370px]">
+    <div className="flex flex-col justify-between border-[2px] border-border-gray rounded-3xl hover:cursor-pointer transition-transform duration-200 hover:translate-y-[-10px] 2xl:min-h-[370px]">
       <div>
         <div className="p-4 pb-0">
           <Image
@@ -35,7 +37,7 @@ export default function NewsCard({
       <div className="px-4 flex justify-end mb-2">
         <span
           className="hover:text-gray-500"
-          onClick={() => router.push("/new")}
+          onClick={() => router.push(`/news/${id}`)}
         >{`READ MORE >`}</span>
       </div>
     </div>

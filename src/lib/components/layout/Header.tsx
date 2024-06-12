@@ -9,6 +9,7 @@ import React, {
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import { Icon } from "@iconify/react";
+import Link from "next/link";
 
 export default function Header({
   headerTrailing,
@@ -28,6 +29,7 @@ export default function Header({
   const logoElement = useMemo(() => {
     return (
       <Image
+        className="hover:cursor-pointer"
         src={"/logo.svg"}
         width={170}
         height={80}
@@ -61,7 +63,9 @@ export default function Header({
           <Image src="/avatar.svg" width={70} height={70} alt="User" />
           <ul className="flex flex-col gap-2">
             <li className="font-bold">John Doe</li>
-            <li className="md:hidden block">Home</li>
+            <li className="md:hidden block">
+              <Link href="/home">Home</Link>
+            </li>
             <li className="md:hidden block">My Interests</li>
             <li>Manage your Interests</li>
             <li>Your Prizes</li>
@@ -69,7 +73,7 @@ export default function Header({
             <li>Logoff</li>
           </ul>
           <Image
-            className="absolute right-0 top-1.5"
+            className="absolute right-0 top-1.5 hover:cursor-pointer"
             src="/inbox.svg"
             alt="Inbox"
             width={30}
@@ -96,6 +100,7 @@ export default function Header({
             <Icon icon="bytesize:search" width="24" height="24" />
           </button>
           <Image
+            className="hover:cursor-pointer"
             src="/inbox.svg"
             alt="Inbox"
             width={30}
